@@ -1,0 +1,7 @@
+# Install torch first, matching the cluster's CUDA (see scripts/setup_env.sh).
+lm_eval[hf]>=0.4.5
+accelerate>=0.33
+transformers>=4.42      # Gemma 2 support
+datasets>=2.19
+huggingface_hub>=0.23
+pandas

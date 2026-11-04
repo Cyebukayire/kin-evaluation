@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/local/scratch/pcyebuk/code/tests/test_kinyaCOLBERT.py", line 1, in <module>
-    from ragatouille import RAGPretrainedModel
-ModuleNotFoundError: No module named 'ragatouille'

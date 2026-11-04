@@ -1,15 +1,12 @@
-#!/bin/bash
-#SBATCH --job-name=job
-#SBATCH --partition=h100day
+#SBATCH --job-name=kin-eval
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
-#SBATCH --time=00:15:00
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --mem=128G
+#SBATCH --time=12:00:00
+#SBATCH --output=logs/%x-%j.out
 
-source /local/scratch/pcyebuk/env.sh
-conda activate kinya-rag
-
-echo "host: $(hostname)  job: $SLURM_JOB_ID  start: $(date)"
-python "$@"
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate kin-eval
+export HF_HOME=/local/scratch/$USER/hf_cache
+cd "$SLURM_SUBMIT_DIR"
+bash "$@"
