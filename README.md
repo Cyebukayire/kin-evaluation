@@ -18,6 +18,10 @@ analysis/
 results/raw/         lm-eval outputs (not committed)
 logs/                Slurm logs (not committed)
 tests/               exploratory scripts and notebooks
+
+configs/datasets.yaml     one entry per dataset: source, splits, where it's stored
+src/kin_eval/data.py      downloads datasets and loads them in one common format
+scripts/download_data.py  python scripts/download_data.py afrimmlu afrimgsm afriqa  
 ```
 
 ## Experiment status

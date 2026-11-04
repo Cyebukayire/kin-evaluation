@@ -1,3 +1,38 @@
-Custom:
-  csv_dir: "Custom-CSV"
-  image_dir: "Custom-data/preprocessed/"
+# Dataset registry. Data lives outside the repo, under data_root.
+# ${USER} and other environment variables are expanded when loaded.
+data_root: /local/scratch/${USER}/data      # normalized .jsonl files written by scripts/download_data.py
+hf_cache: /local/scratch/${USER}/hf_cache   # Hugging Face cache, shared with lm-eval (HF_HOME)
+
+datasets:
+  afrimmlu:
+    description: IrokoBench AfriMMLU, multiple-choice knowledge QA (Adelani et al., 2025)
+    format: multiple_choice
+    source: huggingface
+    path: masakhane/afrimmlu
+    config: kin
+    splits: [validation, test]
+
+  afrimgsm:
+    description: IrokoBench AfriMGSM, math word problems with a numeric answer (Adelani et al., 2025)
+    format: math
+    source: huggingface
+    path: masakhane/afrimgsm
+    config: kin
+    splits: [train, test]
+
+  afriqa:
+    description: AfriQA, open QA; Kinyarwanda questions, English gold passages (Ogundepo et al., 2023)
+    format: open
+    source: url
+    url: https://raw.githubusercontent.com/masakhane-io/afriqa/main/data/queries/kin/queries.afriqa.kin.en.{split}.json
+    splits: [train, dev, test]
+
+  afrimcqa:
+    description: Afri-MCQA, image-grounded multiple-choice QA (Tonja et al., 2026); CC-BY-NC-4.0
+    format: visual_multiple_choice
+    source: huggingface
+    path: Atnafu/Afri-MCQA
+    config: Kinyarwanda_{split}      # one config per split on the Hub
+    hub_split: train                 # split name inside each config; check on the Hub before enabling
+    splits: [dev, test]
+    enabled: false                   # large (images + audio); enable when needed
