@@ -61,7 +61,7 @@ mkdir -p logs
 
 srun --pty -c 8 --mem 16g bash      # compute-node shell
 bash scripts/setup_env.sh
-source /local/scratch/$USER/venvs/kin-eval/bin/activate
+conda activate kin-eval
 huggingface-cli whoami || huggingface-cli login
 bash scripts/download_assets.sh gemma2-27b
 exit

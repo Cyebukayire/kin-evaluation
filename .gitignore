@@ -1,1 +1,14 @@
 Datasets/AfriMSQA/*.parquet
+__pycache__/
+*.pyc
+results/raw/
+logs/
+hf_cache/
+*.safetensors
+*.pt
+*.sif
+*.tar
+*.tar.gz
+MORPHODATA/
+*.dat
+.env

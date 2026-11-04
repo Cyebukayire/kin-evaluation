@@ -13,6 +13,7 @@ set -euo pipefail
 
 WHICH=${1:-gemma2-27b}
 MODE=${2:-nochat}
+LIMIT=${3:-}
 
 case "$WHICH" in
   gemma2-27b)  MODEL=google/gemma-2-27b-it;             EXTRA=",attn_implementation=eager" ;;
@@ -20,7 +21,13 @@ case "$WHICH" in
   *) echo "unknown model $WHICH"; exit 1 ;;
 esac
 
-OUT=results/raw/baseline/$WHICH/$MODE
+if [ -n "$LIMIT" ]; then
+  OUT=results/raw/smoke/$WHICH/$MODE
+  LIMIT_FLAG="--limit $LIMIT"
+else
+  OUT=results/raw/baseline/$WHICH/$MODE
+  LIMIT_FLAG=""
+fi
 mkdir -p "$OUT"
 
 CHAT_FLAG=""
@@ -36,13 +43,9 @@ lm_eval \
   --num_fewshot 0 \
   --batch_size auto \
   $CHAT_FLAG \
+  $LIMIT_FLAG \
   --log_samples \
   --output_path "$OUT"
 
 pip freeze | grep -iE "^(lm.eval|transformers|torch|accelerate)==" > "$OUT/versions.txt" || true
 python analysis/summarize_baseline.py "$OUT" | tee "$OUT/summary.txt"
-
-"""
-simple run: sbatch slurm/run.sbatch scripts/run_baseline.sh gemma2-27b nochat
-override: sbatch --gres=gpu:2 --time=24:00:00 slurm/run.sbatch scripts/run_baseline.sh llama31-70b nochat
-"""

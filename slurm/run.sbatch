@@ -1,3 +1,4 @@
+#!/bin/bash
 #SBATCH --job-name=kin-eval
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
