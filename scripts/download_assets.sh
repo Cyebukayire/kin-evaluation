@@ -17,8 +17,9 @@ source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate kin-eval
 conda activate kin-eval
 
-huggingface-cli whoami
-huggingface-cli download "$MODEL" --exclude "original/*"
+
+hf auth whoami
+hf download "$MODEL" --exclude "original/*"
 
 python - <<'EOF'
 from datasets import load_dataset
