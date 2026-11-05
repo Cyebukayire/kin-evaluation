@@ -1,7 +1,11 @@
 Datasets/AfriMSQA/*.parquet
 __pycache__/
 *.pyc
-results/raw/
+results/raw/**
+!results/raw/**/
+!results/raw/**/summary.txt
+!results/raw/**/versions.txt
+!results/raw/**/results_*.json
 logs/
 hf_cache/
 *.safetensors

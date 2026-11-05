@@ -1,0 +1,18 @@
+
+afrimmlu (kin), metric = acc,none
+  prompt 1:  80.0
+  prompt 2:  70.0
+  prompt 3:  70.0
+  prompt 4:  50.0
+  prompt 5:  70.0
+  best      :  80.0 (prompt 1)   published: 40.2   diff: +39.8
+  mean ± sd :  68.0 ± 11.0
+
+afrimgsm (kin), metric = exact_match,flexible-extract
+  prompt 1:  20.0
+  prompt 2:   0.0
+  prompt 3:   0.0
+  prompt 4:   0.0
+  prompt 5:  20.0
+  best      :  20.0 (prompt 1)   published: 32.4   diff: -12.4
+  mean ± sd :   8.0 ± 11.0
