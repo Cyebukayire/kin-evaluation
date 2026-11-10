@@ -4,11 +4,10 @@
 #
 # Run via Slurm:
 #   sbatch slurm/run.sbatch scripts/run_baseline.sh gemma2-27b nochat
-#   sbatch --gres=gpu:2 --time=24:00:00 slurm/run.sbatch scripts/run_baseline.sh llama31-70b nochat
 #
 # Published in-language kin scores (Adelani et al., 2025):
 #   Gemma 2 27B-it    AfriMMLU 40.2   AfriMGSM 32.4
-#   LLaMA 3.1 70B-it  AfriMMLU 38.6   AfriMGSM 26.4
+
 set -euo pipefail
 
 WHICH=${1:-gemma2-27b}
@@ -17,7 +16,9 @@ LIMIT=${3:-}
 
 case "$WHICH" in
   gemma2-27b)  MODEL=google/gemma-2-27b-it;             EXTRA=",attn_implementation=eager" ;;
-  llama31-70b) MODEL=meta-llama/Llama-3.1-70B-Instruct; EXTRA=",parallelize=True" ;;
+  gemma4-31b)  MODEL=google/gemma-4-31B-it;             EXTRA="" ;;
+  qwen38-27b)  MODEL=Qwen/Qwen3.8-27B;                  EXTRA="" ;;
+  gptoss-20b)  MODEL=openai/gpt-oss-20b;                EXTRA="" ;;
   *) echo "unknown model $WHICH"; exit 1 ;;
 esac
 
@@ -28,7 +29,7 @@ else
   OUT=results/raw/baseline/$WHICH/$MODE
   LIMIT_FLAG=""
 fi
-mkdir -p "$OUT"
+rm -rf "$OUT" && mkdir -p "$OUT"
 
 CHAT_FLAG=""
 [ "$MODE" = "chat" ] && CHAT_FLAG="--apply_chat_template"

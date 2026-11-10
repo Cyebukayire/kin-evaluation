@@ -16,7 +16,6 @@ from pathlib import Path
 
 PUBLISHED = {  # Adelani et al. 2025, in-language, Kinyarwanda
     "gemma2-27b": {"afrimmlu": 40.2, "afrimgsm": 32.4},
-    "llama31-70b": {"afrimmlu": 38.6, "afrimgsm": 26.4},
 }
 # AfriMMLU: log-likelihood accuracy. AfriMGSM: exact match after extracting the last number.
 METRIC = {"afrimmlu": "acc,none", "afrimgsm": "exact_match,flexible-extract"}

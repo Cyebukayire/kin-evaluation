@@ -7,7 +7,9 @@ set -euo pipefail
 WHICH=${1:-gemma2-27b}
 case "$WHICH" in
   gemma2-27b)  MODEL=google/gemma-2-27b-it ;;               # access: https://huggingface.co/google/gemma-2-27b-it
-  llama31-70b) MODEL=meta-llama/Llama-3.1-70B-Instruct ;;   # access: https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct
+  gemma4-31b)  MODEL=google/gemma-4-31B-it ;;
+  qwen38-27b)  MODEL=Qwen/Qwen3.8-27B ;;
+  gptoss-20b)  MODEL=openai/gpt-oss-20b ;;
   *) echo "unknown model $WHICH"; exit 1 ;;
 esac
 
