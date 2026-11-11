@@ -10,6 +10,7 @@ case "$WHICH" in
   gemma4-31b)  MODEL=google/gemma-4-31B-it ;;
   qwen38-27b)  MODEL=Qwen/Qwen3.8-27B ;;
   gptoss-20b)  MODEL=openai/gpt-oss-20b ;;
+  gptoss-120b) MODEL=openai/gpt-oss-120b ;;
   *) echo "unknown model $WHICH"; exit 1 ;;
 esac
 

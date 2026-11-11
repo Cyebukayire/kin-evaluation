@@ -16,9 +16,10 @@ LIMIT=${3:-}
 
 case "$WHICH" in
   gemma2-27b)  MODEL=google/gemma-2-27b-it;             EXTRA=",attn_implementation=eager" ;;
-  gemma4-31b)  MODEL=google/gemma-4-31B-it;             EXTRA="" ;;
+  gemma4-31b)  MODEL=google/gemma-4-31B-it;             EXTRA=",add_bos_token=True" ;;
   qwen38-27b)  MODEL=Qwen/Qwen3.8-27B;                  EXTRA="" ;;
   gptoss-20b)  MODEL=openai/gpt-oss-20b;                EXTRA="" ;;
+  gptoss-120b) MODEL=openai/gpt-oss-120b; EXTRA="" ;;
   *) echo "unknown model $WHICH"; exit 1 ;;
 esac
 
