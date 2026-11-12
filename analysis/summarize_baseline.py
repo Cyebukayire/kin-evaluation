@@ -33,16 +33,17 @@ def load_results(out_dir: Path) -> dict:
 def main(out_dir: str) -> None:
     out = Path(out_dir)
     results = load_results(out)
-    model = next((m for m in PUBLISHED if m in str(out)), None)
+    lang = "eng" if "_eng" in str(out) else "kin"
+    model = next((m for m in PUBLISHED if m in str(out)), None) if lang == "kin" else None
 
     for task, metric in METRIC.items():
         scores = {}
         for name, vals in results.items():
-            m = re.fullmatch(rf"{task}(?:_direct)?_kin_prompt_(\d)", name)
+            m = re.fullmatch(rf"{task}(?:_direct)?_{lang}_prompt_(\d)", name)
             if m and metric in vals:
                 scores[int(m.group(1))] = 100 * vals[metric]
         if not scores:
-            print(f"{task}: no results found for metric {metric}")
+            print(f"\n{task} ({lang}), metric = {metric}")
             continue
         best_p = max(scores, key=scores.get)
         vals = list(scores.values())

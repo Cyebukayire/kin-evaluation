@@ -14,6 +14,10 @@ WHICH=${1:-gemma2-27b}
 MODE=${2:-nochat}
 LIMIT=${3:-}
 
+EVAL_LANG=${EVAL_LANG:-kin}            # kin (default) or eng
+SUFFIX=""
+if [ "$EVAL_LANG" != "kin" ]; then SUFFIX="_$EVAL_LANG"; fi
+
 case "$WHICH" in
   gemma2-27b)  MODEL=google/gemma-2-27b-it;             EXTRA=",attn_implementation=eager" ;;
   gemma4-31b)  MODEL=google/gemma-4-31B-it;             EXTRA=",add_bos_token=True" ;;
@@ -24,10 +28,10 @@ case "$WHICH" in
 esac
 
 if [ -n "$LIMIT" ]; then
-  OUT=results/raw/smoke/$WHICH/$MODE
+  OUT=results/raw/smoke/$WHICH/$MODE$SUFFIX
   LIMIT_FLAG="--limit $LIMIT"
 else
-  OUT=results/raw/baseline/$WHICH/$MODE
+  OUT=results/raw/baseline/$WHICH/$MODE$SUFFIX
   LIMIT_FLAG=""
 fi
 rm -rf "$OUT" && mkdir -p "$OUT"
@@ -35,7 +39,7 @@ rm -rf "$OUT" && mkdir -p "$OUT"
 CHAT_FLAG=""
 [ "$MODE" = "chat" ] && CHAT_FLAG="--apply_chat_template"
 
-TASKS=$(echo afrimmlu_direct_kin_prompt_{1..5} afrimgsm_kin_prompt_{1..5} | tr ' ' ',')
+TASKS=$(echo afrimmlu_direct_${EVAL_LANG}_prompt_{1..5} afrimgsm_${EVAL_LANG}_prompt_{1..5} | tr ' ' ',')
 
 HF_HUB_OFFLINE=1 HF_DATASETS_OFFLINE=1 \
 lm_eval \
