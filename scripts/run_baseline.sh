@@ -9,7 +9,7 @@
 #   Gemma 2 27B-it    AfriMMLU 40.2   AfriMGSM 32.4
 
 set -euo pipefail
-
+{
 WHICH=${1:-gemma2-27b}
 MODE=${2:-nochat}
 LIMIT=${3:-}
@@ -50,4 +50,7 @@ lm_eval \
   --output_path "$OUT"
 
 pip freeze | grep -iE "^(lm.eval|transformers|torch|accelerate)==" > "$OUT/versions.txt" || true
+echo "git_commit=$(git rev-parse HEAD)" >> "$OUT/versions.txt"
 python analysis/summarize_baseline.py "$OUT" | tee "$OUT/summary.txt"
+exit
+}
