@@ -31,9 +31,3 @@ run("bos by hand", torch.cat([torch.tensor([[tok.bos_token_id]]), plain], dim=1)
 chat = tok.apply_chat_template([{"role": "user", "content": prompt}],
                                add_generation_prompt=True, return_tensors="pt")
 run("chat template", chat if isinstance(chat, torch.Tensor) else chat["input_ids"])
-
-del model; torch.cuda.empty_cache()
-eager = AutoModelForCausalLM.from_pretrained(name, dtype=torch.bfloat16, device_map="cuda:0",
-                                             attn_implementation="eager")
-run("bos by hand + eager attention",
-    torch.cat([torch.tensor([[tok.bos_token_id]]), plain], dim=1), eager)

@@ -24,6 +24,10 @@ conda activate kin-eval
 hf auth whoami
 hf download "$MODEL" --exclude "original/*"
 
+if [ "$WHICH" = "gptoss-120b" ]; then
+  python -c "from kernels import get_kernel; get_kernel('kernels-community/gpt-oss-triton-kernels', version=1)" || true
+fi
+
 python - <<'EOF'
 from datasets import load_dataset
 for name in ["masakhane/afrimmlu", "masakhane/afrimgsm"]:

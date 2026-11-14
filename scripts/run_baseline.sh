@@ -27,6 +27,9 @@ case "$WHICH" in
   *) echo "unknown model $WHICH"; exit 1 ;;
 esac
 
+OFFLINE_ENV="env HF_HUB_OFFLINE=1 HF_DATASETS_OFFLINE=1"
+if [ "$WHICH" = "gptoss-120b" ]; then OFFLINE_ENV="env HF_DATASETS_OFFLINE=1"; fi   # model side online for its GPU code lookup
+
 if [ -n "$LIMIT" ]; then
   OUT=results/raw/smoke/$WHICH/$MODE$SUFFIX
   LIMIT_FLAG="--limit $LIMIT"
@@ -41,7 +44,7 @@ CHAT_FLAG=""
 
 TASKS=$(echo afrimmlu_direct_${EVAL_LANG}_prompt_{1..5} afrimgsm_${EVAL_LANG}_prompt_{1..5} | tr ' ' ',')
 
-HF_HUB_OFFLINE=1 HF_DATASETS_OFFLINE=1 \
+$OFFLINE_ENV \
 lm_eval \
   --model hf \
   --model_args pretrained=$MODEL,dtype=bfloat16$EXTRA \
