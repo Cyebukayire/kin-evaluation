@@ -1,0 +1,5 @@
+accelerate==1.15.0
+lm_eval==0.4.13
+torch==2.14.1+cu130
+transformers==5.22.2
+git_commit=a9e8f53cb3c5057e5de94e2991d39e64c5e5d3dd
