@@ -6,6 +6,7 @@ results/raw/**
 !results/raw/**/summary.txt
 !results/raw/**/versions.txt
 !results/raw/**/results_*.json
+!results/raw/**/samples_*.jsonl.gz
 logs/
 hf_cache/
 *.safetensors

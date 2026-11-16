@@ -57,6 +57,7 @@ lm_eval \
   --output_path "$OUT"
 
 pip freeze | grep -iE "^(lm.eval|transformers|torch|accelerate)==" > "$OUT/versions.txt" || true
+gzip -f "$OUT"/*/samples_*.jsonl     # keep the per-question answers in git, compressed
 echo "git_commit=$(git rev-parse HEAD)" >> "$OUT/versions.txt"
 python analysis/summarize_baseline.py "$OUT" | tee "$OUT/summary.txt"
 exit
