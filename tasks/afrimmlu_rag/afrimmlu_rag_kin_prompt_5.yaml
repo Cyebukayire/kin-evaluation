@@ -1,0 +1,3 @@
+include: _template_yaml
+task: afrimmlu_rag_kin_prompt_5
+doc_to_text: !function utils.prompt_5

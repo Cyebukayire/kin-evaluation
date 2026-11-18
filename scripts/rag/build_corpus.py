@@ -22,6 +22,8 @@ from __future__ import annotations
 import argparse
 import csv
 import glob
+import hashlib
+import html
 import json
 import re
 from collections import Counter, defaultdict
@@ -37,6 +39,8 @@ def english_fraction(text: str) -> float:
 
 def clean_lines(title: str, text: str) -> list[str]:
     """Article text as a list of non-empty lines, without the '= Title =' header WikiExtractor adds."""
+    text = html.unescape(html.unescape(text))             # &amp;lt; -> &lt; -> <
+    text = re.sub(r"&\s*nbsp;", " ", text)                 # "&amp; nbsp;" leftovers
     lines = [ln.strip() for ln in text.split("\n")]
     lines = [ln for ln in lines if ln and not re.fullmatch(r"=+\s*.*?\s*=+", ln)]
     return lines
@@ -145,7 +149,12 @@ def main() -> None:
                     st["passages"] += 1
                     st["words"] += n
 
-    report = {"inputs": {"wiki": args.wiki, "kinnews": args.kinnews},
+    def sha256(path):
+        return hashlib.sha256(Path(path).read_bytes()).hexdigest()[:16]
+    wiki_files = sorted(glob.glob(str(Path(args.wiki) / "wiki_*"))) if args.wiki else []
+    report = {"inputs": {"wiki": args.wiki, "kinnews": args.kinnews,
+                         "sha256": {**{Path(f).name: sha256(f) for f in wiki_files},
+                                    **{p: sha256(p) for p in args.kinnews}}},
               "settings": {k: getattr(args, k) for k in ("min_words", "target_words", "max_words", "max_english")},
               "sources": {}}
     for name, st in stats.items():

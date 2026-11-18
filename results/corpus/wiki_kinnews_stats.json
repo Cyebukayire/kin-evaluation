@@ -1,0 +1,63 @@
+{
+  "inputs": {
+    "wiki": "Wikipedia_rw",
+    "kinnews": [
+      "/local/scratch/pcyebuk/data/kinnews/train.csv"
+    ],
+    "sha256": {
+      "wiki_00": "74dd8e2a167cf6ca",
+      "wiki_01": "7242a45298fcbe46",
+      "wiki_02": "bbc07d4b1ce7fe6d",
+      "wiki_03": "c7b84e485420c29f",
+      "wiki_04": "cbfcafbe54a60ef6",
+      "wiki_05": "565d7c8f3c4ada81",
+      "wiki_06": "30c343f8ce740d8d",
+      "wiki_07": "356a4817fe2b91d8",
+      "wiki_08": "121b81bfd9609046",
+      "wiki_09": "7c2ac94e7dafca71",
+      "wiki_10": "35ceba5f1b9f2af6",
+      "wiki_11": "73a495ddaee5763c",
+      "wiki_12": "d283181bb73bc194",
+      "wiki_13": "0db610edef9ac826",
+      "wiki_14": "29b5d55f39ba8989",
+      "wiki_15": "8cac94a259af0482",
+      "wiki_16": "667febc4b7f8062f",
+      "wiki_17": "67977c8816d37a87",
+      "wiki_18": "464eda9ca1e5f938",
+      "/local/scratch/pcyebuk/data/kinnews/train.csv": "9be7644d76b4bfff"
+    }
+  },
+  "settings": {
+    "min_words": 20,
+    "target_words": 100,
+    "max_words": 150,
+    "max_english": 0.15
+  },
+  "sources": {
+    "wikipedia": {
+      "documents_in": 12862,
+      "dropped": {
+        "too_short": 1645,
+        "mostly_english": 44,
+        "duplicate": 44
+      },
+      "documents_kept": 11129,
+      "passages": 24225,
+      "words": 2267653,
+      "mean_passage_words": 93.6
+    },
+    "kinnews": {
+      "documents_in": 17014,
+      "dropped": {
+        "duplicate": 9396,
+        "too_short": 13,
+        "mostly_english": 4
+      },
+      "documents_kept": 7601,
+      "passages": 25507,
+      "words": 2557205,
+      "mean_passage_words": 100.3
+    }
+  },
+  "total_passages": 49732
+}

@@ -22,7 +22,7 @@ from pathlib import Path
 
 from rank_bm25 import BM25Okapi
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
 
 def tokenize(text: str) -> list[str]:
