@@ -16,7 +16,7 @@ scripts/
   setup_env.sh         one-time package install into the kin-eval conda env
   download_assets.sh   cache model weights + baseline datasets for offline Slurm jobs
   download_data.py     download datasets listed in configs/datasets.yaml
-  run_baseline.sh      baseline: closed-book LLM on AfriMMLU + AfriMGSM (Kinyarwanda)
+  run_eval.sh      baseline: closed-book LLM on AfriMMLU + AfriMGSM (Kinyarwanda)
 analysis/
   summarize_baseline.py  per-prompt scores, best prompt vs. published, mean ± sd
 results/raw/           lm-eval outputs (not committed)
@@ -92,14 +92,14 @@ From the repo root.
 
 ```bash
 SMOKE_NOCHAT=$(sbatch --parsable --job-name=g2-smoke-nochat --partition=h100hour --time=00:50:00 \
-  slurm/run.sbatch scripts/run_baseline.sh gemma2-27b nochat 10)
+  slurm/run.sbatch scripts/run_eval.sh gemma2-27b nochat 10)
 SMOKE_CHAT=$(sbatch --parsable --job-name=g2-smoke-chat --partition=h100hour --time=00:50:00 \
-  slurm/run.sbatch scripts/run_baseline.sh gemma2-27b chat 10)
+  slurm/run.sbatch scripts/run_eval.sh gemma2-27b chat 10)
 
 sbatch --job-name=g2-full-nochat --partition=h100day --dependency=afterok:$SMOKE_NOCHAT \
-  slurm/run.sbatch scripts/run_baseline.sh gemma2-27b nochat
+  slurm/run.sbatch scripts/run_eval.sh gemma2-27b nochat
 sbatch --job-name=g2-full-chat --partition=h100day --dependency=afterok:$SMOKE_CHAT \
-  slurm/run.sbatch scripts/run_baseline.sh gemma2-27b chat
+  slurm/run.sbatch scripts/run_eval.sh gemma2-27b chat
 ```
 
 Check and follow jobs:
@@ -118,7 +118,7 @@ LLaMA 3.1 70B needs two GPUs (about 140 GB in bf16):
 
 ```bash
 sbatch --job-name=l3-full-nochat --partition=h100day --gres=gpu:2 \
-  slurm/run.sbatch scripts/run_baseline.sh llama31-70b nochat
+  slurm/run.sbatch scripts/run_eval.sh llama31-70b nochat
 ```
 
 ### 3. Results

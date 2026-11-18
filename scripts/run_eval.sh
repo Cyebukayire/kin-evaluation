@@ -3,7 +3,7 @@
 # zero-shot, all 5 prompts.
 #
 # Run via Slurm:
-#   sbatch slurm/run.sbatch scripts/run_baseline.sh gemma2-27b nochat
+#   sbatch slurm/run.sbatch scripts/run_eval.sh gemma2-27b nochat
 #
 # Published in-language kin scores (Adelani et al., 2025):
 #   Gemma 2 27B-it    AfriMMLU 40.2   AfriMGSM 32.4
