@@ -18,3 +18,5 @@ MORPHODATA/
 *.dat
 .env
 data/kinnews/
+results/retrieval/
+results/retrieval/
