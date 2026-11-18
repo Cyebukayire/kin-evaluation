@@ -1,0 +1,980 @@
+{
+  "results": {
+    "afrimmlu_direct_eng_prompt_1": {
+      "name": "afrimmlu_direct_eng_prompt_1",
+      "alias": "afrimmlu_direct_eng_prompt_1",
+      "sample_len": 500,
+      "acc,none": 0.642,
+      "acc_stderr,none": 0.021461434862859133,
+      "f1,none": 0.6418694030477098,
+      "f1_stderr,none": "N/A"
+    },
+    "afrimmlu_direct_eng_prompt_2": {
+      "name": "afrimmlu_direct_eng_prompt_2",
+      "alias": "afrimmlu_direct_eng_prompt_2",
+      "sample_len": 500,
+      "acc,none": 0.528,
+      "acc_stderr,none": 0.022347949832668024,
+      "f1,none": 0.5255389400119772,
+      "f1_stderr,none": "N/A"
+    },
+    "afrimmlu_direct_eng_prompt_3": {
+      "name": "afrimmlu_direct_eng_prompt_3",
+      "alias": "afrimmlu_direct_eng_prompt_3",
+      "sample_len": 500,
+      "acc,none": 0.572,
+      "acc_stderr,none": 0.022149790663861947,
+      "f1,none": 0.5704091581601706,
+      "f1_stderr,none": "N/A"
+    },
+    "afrimmlu_direct_eng_prompt_4": {
+      "name": "afrimmlu_direct_eng_prompt_4",
+      "alias": "afrimmlu_direct_eng_prompt_4",
+      "sample_len": 500,
+      "acc,none": 0.622,
+      "acc_stderr,none": 0.02170655082451827,
+      "f1,none": 0.6238062178915165,
+      "f1_stderr,none": "N/A"
+    },
+    "afrimmlu_direct_eng_prompt_5": {
+      "name": "afrimmlu_direct_eng_prompt_5",
+      "alias": "afrimmlu_direct_eng_prompt_5",
+      "sample_len": 500,
+      "acc,none": 0.568,
+      "acc_stderr,none": 0.022175109265613186,
+      "f1,none": 0.5661546895563295,
+      "f1_stderr,none": "N/A"
+    },
+    "afrimgsm_eng_prompt_1": {
+      "name": "afrimgsm_eng_prompt_1",
+      "alias": "afrimgsm_eng_prompt_1",
+      "sample_len": 250,
+      "exact_match,remove_whitespace": 0.0,
+      "exact_match_stderr,remove_whitespace": 0.0,
+      "exact_match,flexible-extract": 0.496,
+      "exact_match_stderr,flexible-extract": 0.03168519855119915
+    },
+    "afrimgsm_eng_prompt_2": {
+      "name": "afrimgsm_eng_prompt_2",
+      "alias": "afrimgsm_eng_prompt_2",
+      "sample_len": 250,
+      "exact_match,remove_whitespace": 0.156,
+      "exact_match_stderr,remove_whitespace": 0.022995023034068765,
+      "exact_match,flexible-extract": 0.608,
+      "exact_match_stderr,flexible-extract": 0.0309382076204012
+    },
+    "afrimgsm_eng_prompt_3": {
+      "name": "afrimgsm_eng_prompt_3",
+      "alias": "afrimgsm_eng_prompt_3",
+      "sample_len": 250,
+      "exact_match,remove_whitespace": 0.0,
+      "exact_match_stderr,remove_whitespace": 0.0,
+      "exact_match,flexible-extract": 0.368,
+      "exact_match_stderr,flexible-extract": 0.030562070620993163
+    },
+    "afrimgsm_eng_prompt_4": {
+      "name": "afrimgsm_eng_prompt_4",
+      "alias": "afrimgsm_eng_prompt_4",
+      "sample_len": 250,
+      "exact_match,remove_whitespace": 0.004,
+      "exact_match_stderr,remove_whitespace": 0.004,
+      "exact_match,flexible-extract": 0.612,
+      "exact_match_stderr,flexible-extract": 0.03088103874899392
+    },
+    "afrimgsm_eng_prompt_5": {
+      "name": "afrimgsm_eng_prompt_5",
+      "alias": "afrimgsm_eng_prompt_5",
+      "sample_len": 250,
+      "exact_match,remove_whitespace": 0.0,
+      "exact_match_stderr,remove_whitespace": 0.0,
+      "exact_match,flexible-extract": 0.532,
+      "exact_match_stderr,flexible-extract": 0.03162125257572551
+    }
+  },
+  "group_subtasks": {},
+  "configs": {
+    "afrimgsm_eng_prompt_1": {
+      "task": "afrimgsm_eng_prompt_1",
+      "dataset_path": "masakhane/afrimgsm",
+      "dataset_name": "eng",
+      "test_split": "test",
+      "doc_to_text": "{% if answer is not none %}{{question+\"\\nAnswer:\"}}{% else %}{{\"Question: \"+question+\"\\nAnswer:\"}}{% endif %}",
+      "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "{% if answer is not none %}{{question+\"\\nAnswer:\"}}{% else %}{{\"Question: \"+question+\"\\nAnswer:\"}}{% endif %}",
+        "doc_to_choice": null,
+        "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "do_sample": false,
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ]
+      },
+      "repeats": 1,
+      "filter_list": [
+        {
+          "name": "remove_whitespace",
+          "filter": [
+            {
+              "function": "remove_whitespace"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ],
+          "name": "flexible-extract"
+        }
+      ],
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 2.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimgsm/direct/prompt_1/afrimgsm_eng.yaml"
+      }
+    },
+    "afrimgsm_eng_prompt_2": {
+      "task": "afrimgsm_eng_prompt_2",
+      "dataset_path": "masakhane/afrimgsm",
+      "dataset_name": "eng",
+      "test_split": "test",
+      "doc_to_text": "Give direct numerical answers for the question provided. \n\nQuestion: {{question}} \nAnswer: ",
+      "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Give direct numerical answers for the question provided. \n\nQuestion: {{question}} \nAnswer: ",
+        "doc_to_choice": null,
+        "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "do_sample": false,
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ]
+      },
+      "repeats": 1,
+      "filter_list": [
+        {
+          "name": "remove_whitespace",
+          "filter": [
+            {
+              "function": "remove_whitespace"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ],
+          "name": "flexible-extract"
+        }
+      ],
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 2.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimgsm/direct/prompt_2/afrimgsm_eng.yaml"
+      }
+    },
+    "afrimgsm_eng_prompt_3": {
+      "task": "afrimgsm_eng_prompt_3",
+      "dataset_path": "masakhane/afrimgsm",
+      "dataset_name": "eng",
+      "test_split": "test",
+      "doc_to_text": "Solve the following math question \n\nQuestion: {{question}} \nAnswer: ",
+      "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Solve the following math question \n\nQuestion: {{question}} \nAnswer: ",
+        "doc_to_choice": null,
+        "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "do_sample": false,
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ]
+      },
+      "repeats": 1,
+      "filter_list": [
+        {
+          "name": "remove_whitespace",
+          "filter": [
+            {
+              "function": "remove_whitespace"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ],
+          "name": "flexible-extract"
+        }
+      ],
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 2.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimgsm/direct/prompt_3/afrimgsm_eng.yaml"
+      }
+    },
+    "afrimgsm_eng_prompt_4": {
+      "task": "afrimgsm_eng_prompt_4",
+      "dataset_path": "masakhane/afrimgsm",
+      "dataset_name": "eng",
+      "test_split": "test",
+      "doc_to_text": "Answer the given question with the appropriate numerical value, ensuring that the response is clear and without any supplementary information. \n\nQuestion: {{question}} \nAnswer: ",
+      "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Answer the given question with the appropriate numerical value, ensuring that the response is clear and without any supplementary information. \n\nQuestion: {{question}} \nAnswer: ",
+        "doc_to_choice": null,
+        "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "do_sample": false,
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ]
+      },
+      "repeats": 1,
+      "filter_list": [
+        {
+          "name": "remove_whitespace",
+          "filter": [
+            {
+              "function": "remove_whitespace"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ],
+          "name": "flexible-extract"
+        }
+      ],
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 2.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimgsm/direct/prompt_4/afrimgsm_eng.yaml"
+      }
+    },
+    "afrimgsm_eng_prompt_5": {
+      "task": "afrimgsm_eng_prompt_5",
+      "dataset_path": "masakhane/afrimgsm",
+      "dataset_name": "eng",
+      "test_split": "test",
+      "doc_to_text": "For mathematical questions provided in English language. Supply the accurate numeric answer to the provided question. \n\nQuestion: {{question}} \nAnswer: ",
+      "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "For mathematical questions provided in English language. Supply the accurate numeric answer to the provided question. \n\nQuestion: {{question}} \nAnswer: ",
+        "doc_to_choice": null,
+        "doc_to_target": "{% if answer is not none %}{{answer[21:]}}{% else %}{{answer_number|string}}{% endif %}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "do_sample": false,
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ]
+      },
+      "repeats": 1,
+      "filter_list": [
+        {
+          "name": "remove_whitespace",
+          "filter": [
+            {
+              "function": "remove_whitespace"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ],
+          "name": "flexible-extract"
+        }
+      ],
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 2.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimgsm/direct/prompt_5/afrimgsm_eng.yaml"
+      }
+    },
+    "afrimmlu_direct_eng_prompt_1": {
+      "task": "afrimmlu_direct_eng_prompt_1",
+      "dataset_path": "masakhane/afrimmlu",
+      "dataset_name": "eng",
+      "validation_split": "validation",
+      "test_split": "test",
+      "fewshot_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    output = \"\"\"You are a highly knowledgeable and intelligent artificial intelligence\n                model answers multiple-choice questions about {subject}\n\n                Question: {question}\n\n                Choices:\n                        A: {choice1}\n                        B: {choice2}\n                        C: {choice3}\n                        D: {choice4}\n\n                Answer:  \"\"\"\n\n    choices = ast.literal_eval(doc[\"choices\"])\n    text = output.format(\n        subject=doc[\"subject\"],\n        question=doc[\"question\"],\n        choice1=choices[0],\n        choice2=choices[1],\n        choice3=choices[2],\n        choice4=choices[3],\n    )\n    return text\n",
+      "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "def doc_to_choice(doc):\n    choices = ast.literal_eval(doc[\"choices\"])\n    return choices\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "validation",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function doc_to_text at 0x74a95cd6fab0>",
+        "doc_to_choice": "<function doc_to_choice at 0x74a95cd6fa00>",
+        "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "f1",
+          "aggregation": "def weighted_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items, strict=True))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"weighted\")\n    return fscore\n",
+          "average": "weighted",
+          "hf_evaluate": true,
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        },
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimmlu/direct/prompt_1/afrimmlu_direct_eng.yaml"
+      }
+    },
+    "afrimmlu_direct_eng_prompt_2": {
+      "task": "afrimmlu_direct_eng_prompt_2",
+      "dataset_path": "masakhane/afrimmlu",
+      "dataset_name": "eng",
+      "validation_split": "validation",
+      "test_split": "test",
+      "fewshot_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    output = \"\"\"As an expert in {subject}, choose the most accurate answer to the question below.\nYour goal is to select the correct option 'A', 'B', 'C', or 'D' by understanding the nuances of the topic.\n\nQuestion: {question}\nChoices:\n        A: {choice1}\n        B: {choice2}\n        C: {choice3}\n        D: {choice4}\nAnswer: \"\"\"\n\n    choices = ast.literal_eval(doc[\"choices\"])\n    text = output.format(\n        subject=doc[\"subject\"],\n        question=doc[\"question\"],\n        choice1=choices[0],\n        choice2=choices[1],\n        choice3=choices[2],\n        choice4=choices[3],\n    )\n    return text\n",
+      "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "def doc_to_choice(doc):\n    choices = ast.literal_eval(doc[\"choices\"])\n    return choices\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "validation",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function doc_to_text at 0x749c91c03060>",
+        "doc_to_choice": "<function doc_to_choice at 0x749c91c02fb0>",
+        "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "f1",
+          "aggregation": "def weighted_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items, strict=True))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"weighted\")\n    return fscore\n",
+          "average": "weighted",
+          "hf_evaluate": true,
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        },
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimmlu/direct/prompt_2/afrimmlu_direct_eng.yaml"
+      }
+    },
+    "afrimmlu_direct_eng_prompt_3": {
+      "task": "afrimmlu_direct_eng_prompt_3",
+      "dataset_path": "masakhane/afrimmlu",
+      "dataset_name": "eng",
+      "validation_split": "validation",
+      "test_split": "test",
+      "fewshot_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    output = \"\"\"You are a subject matter expert in {subject}.\n\n  Utilizing your expertise in {subject}, answer the following multiple-choice question\n  by picking 'A', 'B', 'C', or 'D'.\n\nQuestion: {question}\nChoices:\n        A: {choice1}\n        B: {choice2}\n        C: {choice3}\n        D: {choice4}\nAnswer: \"\"\"\n\n    choices = ast.literal_eval(doc[\"choices\"])\n    text = output.format(\n        subject=doc[\"subject\"],\n        question=doc[\"question\"],\n        choice1=choices[0],\n        choice2=choices[1],\n        choice3=choices[2],\n        choice4=choices[3],\n    )\n    return text\n",
+      "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "def doc_to_choice(doc):\n    choices = ast.literal_eval(doc[\"choices\"])\n    return choices\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "validation",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function doc_to_text at 0x749c91c2c3b0>",
+        "doc_to_choice": "<function doc_to_choice at 0x749c91c2c300>",
+        "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "f1",
+          "aggregation": "def weighted_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items, strict=True))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"weighted\")\n    return fscore\n",
+          "average": "weighted",
+          "hf_evaluate": true,
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        },
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimmlu/direct/prompt_3/afrimmlu_direct_eng.yaml"
+      }
+    },
+    "afrimmlu_direct_eng_prompt_4": {
+      "task": "afrimmlu_direct_eng_prompt_4",
+      "dataset_path": "masakhane/afrimmlu",
+      "dataset_name": "eng",
+      "validation_split": "validation",
+      "test_split": "test",
+      "fewshot_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    output = \"\"\"Analyze each question critically and determine the most correct option based on your understanding of the subject matter\n\nQuestion: {question}\nChoices:\n        A: {choice1}\n        B: {choice2}\n        C: {choice3}\n        D: {choice4}\nAnswer: \"\"\"\n\n    choices = ast.literal_eval(doc[\"choices\"])\n    text = output.format(\n        question=doc[\"question\"],\n        choice1=choices[0],\n        choice2=choices[1],\n        choice3=choices[2],\n        choice4=choices[3],\n    )\n    return text\n",
+      "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "def doc_to_choice(doc):\n    choices = ast.literal_eval(doc[\"choices\"])\n    return choices\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "validation",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function doc_to_text at 0x749c91c2fd70>",
+        "doc_to_choice": "<function doc_to_choice at 0x749c91c2fcc0>",
+        "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "f1",
+          "aggregation": "def weighted_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items, strict=True))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"weighted\")\n    return fscore\n",
+          "average": "weighted",
+          "hf_evaluate": true,
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        },
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimmlu/direct/prompt_4/afrimmlu_direct_eng.yaml"
+      }
+    },
+    "afrimmlu_direct_eng_prompt_5": {
+      "task": "afrimmlu_direct_eng_prompt_5",
+      "dataset_path": "masakhane/afrimmlu",
+      "dataset_name": "eng",
+      "validation_split": "validation",
+      "test_split": "test",
+      "fewshot_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    output = \"\"\"Given your proficiency in {subject}, please answer the subsequent multiple-choice question with 'A', 'B', 'C', or 'D'.\n\nQuestion: {question}\nChoices:\n        A: {choice1}\n        B: {choice2}\n        C: {choice3}\n        D: {choice4}\nAnswer: \"\"\"\n\n    choices = ast.literal_eval(doc[\"choices\"])\n    text = output.format(\n        subject=doc[\"subject\"],\n        question=doc[\"question\"],\n        choice1=choices[0],\n        choice2=choices[1],\n        choice3=choices[2],\n        choice4=choices[3],\n    )\n    return text\n",
+      "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "def doc_to_choice(doc):\n    choices = ast.literal_eval(doc[\"choices\"])\n    return choices\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "validation",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function doc_to_text at 0x749c91c4b7f0>",
+        "doc_to_choice": "<function doc_to_choice at 0x749c91c4b740>",
+        "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "f1",
+          "aggregation": "def weighted_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items, strict=True))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"weighted\")\n    return fscore\n",
+          "average": "weighted",
+          "hf_evaluate": true,
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        },
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true,
+          "regexes_to_ignore": [
+            ",",
+            "\\$"
+          ]
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "pretrained": "Qwen/Qwen3.8-27B",
+        "dtype": "bfloat16",
+        "config_source": "/local/scratch/pcyebuk/miniconda/envs/kin-eval/lib/python3.15/site-packages/lm_eval/tasks/afrimmlu/direct/prompt_5/afrimmlu_direct_eng.yaml"
+      }
+    }
+  },
+  "versions": {
+    "afrimgsm_eng_prompt_1": 2.0,
+    "afrimgsm_eng_prompt_2": 2.0,
+    "afrimgsm_eng_prompt_3": 2.0,
+    "afrimgsm_eng_prompt_4": 2.0,
+    "afrimgsm_eng_prompt_5": 2.0,
+    "afrimmlu_direct_eng_prompt_1": 1.0,
+    "afrimmlu_direct_eng_prompt_2": 1.0,
+    "afrimmlu_direct_eng_prompt_3": 1.0,
+    "afrimmlu_direct_eng_prompt_4": 1.0,
+    "afrimmlu_direct_eng_prompt_5": 1.0
+  },
+  "n-shot": {
+    "afrimgsm_eng_prompt_1": 0,
+    "afrimgsm_eng_prompt_2": 0,
+    "afrimgsm_eng_prompt_3": 0,
+    "afrimgsm_eng_prompt_4": 0,
+    "afrimgsm_eng_prompt_5": 0,
+    "afrimmlu_direct_eng_prompt_1": 0,
+    "afrimmlu_direct_eng_prompt_2": 0,
+    "afrimmlu_direct_eng_prompt_3": 0,
+    "afrimmlu_direct_eng_prompt_4": 0,
+    "afrimmlu_direct_eng_prompt_5": 0
+  },
+  "higher_is_better": {
+    "afrimgsm_eng_prompt_1": {
+      "exact_match": true
+    },
+    "afrimgsm_eng_prompt_2": {
+      "exact_match": true
+    },
+    "afrimgsm_eng_prompt_3": {
+      "exact_match": true
+    },
+    "afrimgsm_eng_prompt_4": {
+      "exact_match": true
+    },
+    "afrimgsm_eng_prompt_5": {
+      "exact_match": true
+    },
+    "afrimmlu_direct_eng_prompt_1": {
+      "f1": true,
+      "acc": true
+    },
+    "afrimmlu_direct_eng_prompt_2": {
+      "f1": true,
+      "acc": true
+    },
+    "afrimmlu_direct_eng_prompt_3": {
+      "f1": true,
+      "acc": true
+    },
+    "afrimmlu_direct_eng_prompt_4": {
+      "f1": true,
+      "acc": true
+    },
+    "afrimmlu_direct_eng_prompt_5": {
+      "f1": true,
+      "acc": true
+    }
+  },
+  "n-samples": {
+    "afrimmlu_direct_eng_prompt_1": {
+      "original": 500,
+      "effective": 500
+    },
+    "afrimmlu_direct_eng_prompt_2": {
+      "original": 500,
+      "effective": 500
+    },
+    "afrimmlu_direct_eng_prompt_3": {
+      "original": 500,
+      "effective": 500
+    },
+    "afrimmlu_direct_eng_prompt_4": {
+      "original": 500,
+      "effective": 500
+    },
+    "afrimmlu_direct_eng_prompt_5": {
+      "original": 500,
+      "effective": 500
+    },
+    "afrimgsm_eng_prompt_1": {
+      "original": 250,
+      "effective": 250
+    },
+    "afrimgsm_eng_prompt_2": {
+      "original": 250,
+      "effective": 250
+    },
+    "afrimgsm_eng_prompt_3": {
+      "original": 250,
+      "effective": 250
+    },
+    "afrimgsm_eng_prompt_4": {
+      "original": 250,
+      "effective": 250
+    },
+    "afrimgsm_eng_prompt_5": {
+      "original": 250,
+      "effective": 250
+    }
+  },
+  "config": {
+    "model": "hf",
+    "model_args": {
+      "pretrained": "Qwen/Qwen3.8-27B",
+      "dtype": "bfloat16"
+    },
+    "model_num_parameters": 26895998464,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "",
+    "batch_size": "auto",
+    "batch_sizes": [
+      45
+    ],
+    "device": "cuda:0",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": {},
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "a0c7a95",
+  "date": 1794998167.215901,
+  "pretty_env_info": "PyTorch version: 2.14.1+cu130\nIs debug build: False\nCUDA used to build PyTorch: 13.0\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.4 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.39\n\nPython version: 3.15.2 | packaged by Anaconda, Inc. | (main, Oct 28 2026, 14:01:39) [GCC 14.3.0] (64-bit runtime)\nPython platform: Linux-6.8.0-138-generic-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA H100 80GB HBM3\nNvidia driver version: 595.71.05\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nArchitecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  96\nOn-line CPU(s) list:                     0-95\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) Gold 5418Y\nCPU family:                              6\nModel:                                   143\nThread(s) per core:                      2\nCore(s) per socket:                      24\nSocket(s):                               2\nStepping:                                8\nCPU(s) scaling MHz:                      30%\nCPU max MHz:                             3800.0000\nCPU min MHz:                             800.0000\nBogoMIPS:                                4000.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hfi vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities ibpb_exit_to_user\nVirtualization:                          VT-x\nL1d cache:                               2.3 MiB (48 instances)\nL1i cache:                               1.5 MiB (48 instances)\nL2 cache:                                96 MiB (48 instances)\nL3 cache:                                90 MiB (2 instances)\nNUMA node(s):                            2\nNUMA node0 CPU(s):                       0-23,48-71\nNUMA node1 CPU(s):                       24-47,72-95\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n\nVersions of relevant libraries:\n[pip3] numpy==2.5.4\n[pip3] nvidia-cublas==13.1.1.3\n[pip3] nvidia-cuda-cupti==13.0.85\n[pip3] nvidia-cuda-nvrtc==13.0.88\n[pip3] nvidia-cuda-runtime==13.0.96\n[pip3] nvidia-cudnn-cu13==9.24.0.43\n[pip3] nvidia-cufft==12.0.0.61\n[pip3] nvidia-curand==10.4.0.35\n[pip3] nvidia-cusolver==12.0.4.66\n[pip3] nvidia-cusparse==12.6.3.3\n[pip3] nvidia-cusparselt-cu13==0.8.1\n[pip3] nvidia-nccl-cu13==2.30.7\n[pip3] nvidia-nvjitlink==13.4.92\n[pip3] nvidia-nvtx==13.0.85\n[pip3] torch==2.14.1+cu130\n[pip3] torchaudio==2.11.1\n[pip3] torchvision==0.29.2\n[pip3] triton==3.9.0\n[conda] numpy                      2.5.4            pypi_0              pypi\n[conda] nvidia-cublas              13.1.1.3         pypi_0              pypi\n[conda] nvidia-cuda-cupti          13.0.85          pypi_0              pypi\n[conda] nvidia-cuda-nvrtc          13.0.88          pypi_0              pypi\n[conda] nvidia-cuda-runtime        13.0.96          pypi_0              pypi\n[conda] nvidia-cudnn-cu13          9.24.0.43        pypi_0              pypi\n[conda] nvidia-cufft               12.0.0.61        pypi_0              pypi\n[conda] nvidia-curand              10.4.0.35        pypi_0              pypi\n[conda] nvidia-cusolver            12.0.4.66        pypi_0              pypi\n[conda] nvidia-cusparse            12.6.3.3         pypi_0              pypi\n[conda] nvidia-cusparselt-cu13     0.8.1            pypi_0              pypi\n[conda] nvidia-nccl-cu13           2.30.7           pypi_0              pypi\n[conda] nvidia-nvjitlink           13.4.92          pypi_0              pypi\n[conda] nvidia-nvtx                13.0.85          pypi_0              pypi\n[conda] torch                      2.14.1+cu130     pypi_0              pypi\n[conda] torchaudio                 2.11.1           pypi_0              pypi\n[conda] torchvision                0.29.2           pypi_0              pypi\n[conda] triton                     3.9.0            pypi_0              pypi",
+  "transformers_version": "5.22.2",
+  "lm_eval_version": "0.4.13",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<|endoftext|>",
+    "248044"
+  ],
+  "tokenizer_eos_token": [
+    "<|im_end|>",
+    "248046"
+  ],
+  "tokenizer_bos_token": [
+    null,
+    "None"
+  ],
+  "eot_token_id": 248046,
+  "max_length": 262144,
+  "task_hashes": {
+    "afrimmlu_direct_eng_prompt_1": "76a5e48fe158795a19002a62dfc497762c5fe154a84e07aca2c4128fccdefa4d",
+    "afrimmlu_direct_eng_prompt_2": "e496d35f769dff6953b5bd08af6c920296d772037bd21ad68020bcc108f9378f",
+    "afrimmlu_direct_eng_prompt_3": "d640b27e36d59c414dbfbb193ced931bdef8467033788a8731bc6bcdc36f9a2b",
+    "afrimmlu_direct_eng_prompt_4": "a202696d6852b204d1c62f0e94702e9bfc5c603c76ade3eaf50d2f20978aae8d",
+    "afrimmlu_direct_eng_prompt_5": "64aec49cc674114021fd3ae0644d75edfb0eb862bf17f4518b13183ca82f2589",
+    "afrimgsm_eng_prompt_1": "f2504ac0ac7204af7f98e556b09d9ba69a08f35e00d20ad2f9d325ae85640637",
+    "afrimgsm_eng_prompt_2": "5c483b82110430de042ffa873b3b8489615028151ef20a9bcc2cc47d49d25973",
+    "afrimgsm_eng_prompt_3": "ac32eec7be2fbf396cf1cf59df20344895ba68771168382d45b1508ae7f0f790",
+    "afrimgsm_eng_prompt_4": "100abb6faa94e1bc02b5eee2e97e8914146081f4fe74c7ef811dde336f088a53",
+    "afrimgsm_eng_prompt_5": "c01d9e7a35acb8d0c463901df280eec3df7b0caf4864318a9bbc119c0945efb8"
+  },
+  "model_source": "hf",
+  "model_name": "Qwen/Qwen3.8-27B",
+  "model_name_sanitized": "Qwen__Qwen3.8-27B",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": null,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "total_evaluation_time_seconds": "11669.517084765015"
+}
