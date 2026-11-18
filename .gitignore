@@ -17,3 +17,4 @@ hf_cache/
 MORPHODATA/
 *.dat
 .env
+data/kinnews/

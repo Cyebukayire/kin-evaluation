@@ -2,4 +2,4 @@ accelerate==1.15.0
 lm_eval==0.4.13
 torch==2.14.1+cu130
 transformers==5.22.2
-git_commit=f1946c02b02f3f16e24850478dca385abfab4121
+git_commit=e036e155832d11af60b1de8c72ad75345db53bac

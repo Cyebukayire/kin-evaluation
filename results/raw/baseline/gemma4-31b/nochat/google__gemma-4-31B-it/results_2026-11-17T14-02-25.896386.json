@@ -51,8 +51,8 @@
       "sample_len": 250,
       "exact_match,remove_whitespace": 0.004,
       "exact_match_stderr,remove_whitespace": 0.0040000000000000036,
-      "exact_match,flexible-extract": 0.212,
-      "exact_match_stderr,flexible-extract": 0.025901884690541162
+      "exact_match,flexible-extract": 0.208,
+      "exact_match_stderr,flexible-extract": 0.02572139890141639
     },
     "afrimgsm_kin_prompt_2": {
       "name": "afrimgsm_kin_prompt_2",
@@ -69,8 +69,8 @@
       "sample_len": 250,
       "exact_match,remove_whitespace": 0.0,
       "exact_match_stderr,remove_whitespace": 0.0,
-      "exact_match,flexible-extract": 0.18,
-      "exact_match_stderr,flexible-extract": 0.02434689065029351
+      "exact_match,flexible-extract": 0.188,
+      "exact_match_stderr,flexible-extract": 0.02476037772775048
     },
     "afrimgsm_kin_prompt_4": {
       "name": "afrimgsm_kin_prompt_4",
@@ -87,8 +87,8 @@
       "sample_len": 250,
       "exact_match,remove_whitespace": 0.124,
       "exact_match_stderr,remove_whitespace": 0.02088638225867326,
-      "exact_match,flexible-extract": 0.268,
-      "exact_match_stderr,flexible-extract": 0.02806876238252669
+      "exact_match,flexible-extract": 0.264,
+      "exact_match_stderr,flexible-extract": 0.027934518957690908
     }
   },
   "group_subtasks": {},
@@ -508,8 +508,8 @@
         "process_docs": null,
         "fewshot_indices": null,
         "samples": null,
-        "doc_to_text": "<function doc_to_text at 0x716337c1ba00>",
-        "doc_to_choice": "<function doc_to_choice at 0x716337c1bc10>",
+        "doc_to_text": "<function doc_to_text at 0x774f4a6f3c10>",
+        "doc_to_choice": "<function doc_to_choice at 0x774f4a6f38a0>",
         "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
         "gen_prefix": null,
         "fewshot_delimiter": "\n\n",
@@ -574,8 +574,8 @@
         "process_docs": null,
         "fewshot_indices": null,
         "samples": null,
-        "doc_to_text": "<function doc_to_text at 0x7163268e3a00>",
-        "doc_to_choice": "<function doc_to_choice at 0x7163268e3950>",
+        "doc_to_text": "<function doc_to_text at 0x774f3a87cf60>",
+        "doc_to_choice": "<function doc_to_choice at 0x774f3a87ceb0>",
         "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
         "gen_prefix": null,
         "fewshot_delimiter": "\n\n",
@@ -640,8 +640,8 @@
         "process_docs": null,
         "fewshot_indices": null,
         "samples": null,
-        "doc_to_text": "<function doc_to_text at 0x716326910b40>",
-        "doc_to_choice": "<function doc_to_choice at 0x716326910a90>",
+        "doc_to_text": "<function doc_to_text at 0x774f3a87dfe0>",
+        "doc_to_choice": "<function doc_to_choice at 0x774f3a87df30>",
         "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
         "gen_prefix": null,
         "fewshot_delimiter": "\n\n",
@@ -706,8 +706,8 @@
         "process_docs": null,
         "fewshot_indices": null,
         "samples": null,
-        "doc_to_text": "<function doc_to_text at 0x7163269203b0>",
-        "doc_to_choice": "<function doc_to_choice at 0x716326920300>",
+        "doc_to_text": "<function doc_to_text at 0x774f3a89d850>",
+        "doc_to_choice": "<function doc_to_choice at 0x774f3a89d7a0>",
         "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
         "gen_prefix": null,
         "fewshot_delimiter": "\n\n",
@@ -772,8 +772,8 @@
         "process_docs": null,
         "fewshot_indices": null,
         "samples": null,
-        "doc_to_text": "<function doc_to_text at 0x716326913ab0>",
-        "doc_to_choice": "<function doc_to_choice at 0x716326913950>",
+        "doc_to_text": "<function doc_to_text at 0x774f3a89f950>",
+        "doc_to_choice": "<function doc_to_choice at 0x774f3a89f8a0>",
         "doc_to_target": "{{['A', 'B', 'C', 'D'].index(answer)}}",
         "gen_prefix": null,
         "fewshot_delimiter": "\n\n",
@@ -947,9 +947,9 @@
     "torch_seed": 1234,
     "fewshot_seed": 1234
   },
-  "git_hash": "f1c2e2c",
-  "date": 1794427503.432463,
-  "pretty_env_info": "PyTorch version: 2.14.1+cu130\nIs debug build: False\nCUDA used to build PyTorch: 13.0\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.4 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.39\n\nPython version: 3.15.2 | packaged by Anaconda, Inc. | (main, Oct 28 2026, 14:01:39) [GCC 14.3.0] (64-bit runtime)\nPython platform: Linux-6.8.0-138-generic-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA H100 80GB HBM3\nNvidia driver version: 595.71.05\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nArchitecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  96\nOn-line CPU(s) list:                     0-95\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) Gold 5418Y\nCPU family:                              6\nModel:                                   143\nThread(s) per core:                      2\nCore(s) per socket:                      24\nSocket(s):                               2\nStepping:                                8\nCPU(s) scaling MHz:                      44%\nCPU max MHz:                             3800.0000\nCPU min MHz:                             800.0000\nBogoMIPS:                                4000.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hfi vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities ibpb_exit_to_user\nVirtualization:                          VT-x\nL1d cache:                               2.3 MiB (48 instances)\nL1i cache:                               1.5 MiB (48 instances)\nL2 cache:                                96 MiB (48 instances)\nL3 cache:                                90 MiB (2 instances)\nNUMA node(s):                            2\nNUMA node0 CPU(s):                       0-23,48-71\nNUMA node1 CPU(s):                       24-47,72-95\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n\nVersions of relevant libraries:\n[pip3] numpy==2.5.4\n[pip3] nvidia-cublas==13.1.1.3\n[pip3] nvidia-cuda-cupti==13.0.85\n[pip3] nvidia-cuda-nvrtc==13.0.88\n[pip3] nvidia-cuda-runtime==13.0.96\n[pip3] nvidia-cudnn-cu13==9.24.0.43\n[pip3] nvidia-cufft==12.0.0.61\n[pip3] nvidia-curand==10.4.0.35\n[pip3] nvidia-cusolver==12.0.4.66\n[pip3] nvidia-cusparse==12.6.3.3\n[pip3] nvidia-cusparselt-cu13==0.8.1\n[pip3] nvidia-nccl-cu13==2.30.7\n[pip3] nvidia-nvjitlink==13.4.92\n[pip3] nvidia-nvtx==13.0.85\n[pip3] torch==2.14.1+cu130\n[pip3] torchaudio==2.11.1\n[pip3] torchvision==0.29.2\n[pip3] triton==3.9.0\n[conda] numpy                      2.5.4            pypi_0              pypi\n[conda] nvidia-cublas              13.1.1.3         pypi_0              pypi\n[conda] nvidia-cuda-cupti          13.0.85          pypi_0              pypi\n[conda] nvidia-cuda-nvrtc          13.0.88          pypi_0              pypi\n[conda] nvidia-cuda-runtime        13.0.96          pypi_0              pypi\n[conda] nvidia-cudnn-cu13          9.24.0.43        pypi_0              pypi\n[conda] nvidia-cufft               12.0.0.61        pypi_0              pypi\n[conda] nvidia-curand              10.4.0.35        pypi_0              pypi\n[conda] nvidia-cusolver            12.0.4.66        pypi_0              pypi\n[conda] nvidia-cusparse            12.6.3.3         pypi_0              pypi\n[conda] nvidia-cusparselt-cu13     0.8.1            pypi_0              pypi\n[conda] nvidia-nccl-cu13           2.30.7           pypi_0              pypi\n[conda] nvidia-nvjitlink           13.4.92          pypi_0              pypi\n[conda] nvidia-nvtx                13.0.85          pypi_0              pypi\n[conda] torch                      2.14.1+cu130     pypi_0              pypi\n[conda] torchaudio                 2.11.1           pypi_0              pypi\n[conda] torchvision                0.29.2           pypi_0              pypi\n[conda] triton                     3.9.0            pypi_0              pypi",
+  "git_hash": "e036e15",
+  "date": 1794930963.4498317,
+  "pretty_env_info": "PyTorch version: 2.14.1+cu130\nIs debug build: False\nCUDA used to build PyTorch: 13.0\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.4 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.39\n\nPython version: 3.15.2 | packaged by Anaconda, Inc. | (main, Oct 28 2026, 14:01:39) [GCC 14.3.0] (64-bit runtime)\nPython platform: Linux-6.8.0-138-generic-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA H100 80GB HBM3\nNvidia driver version: 595.71.05\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nArchitecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  96\nOn-line CPU(s) list:                     0-95\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) Gold 5418Y\nCPU family:                              6\nModel:                                   143\nThread(s) per core:                      2\nCore(s) per socket:                      24\nSocket(s):                               2\nStepping:                                8\nCPU(s) scaling MHz:                      48%\nCPU max MHz:                             3800.0000\nCPU min MHz:                             800.0000\nBogoMIPS:                                4000.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hfi vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities ibpb_exit_to_user\nVirtualization:                          VT-x\nL1d cache:                               2.3 MiB (48 instances)\nL1i cache:                               1.5 MiB (48 instances)\nL2 cache:                                96 MiB (48 instances)\nL3 cache:                                90 MiB (2 instances)\nNUMA node(s):                            2\nNUMA node0 CPU(s):                       0-23,48-71\nNUMA node1 CPU(s):                       24-47,72-95\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n\nVersions of relevant libraries:\n[pip3] numpy==2.5.4\n[pip3] nvidia-cublas==13.1.1.3\n[pip3] nvidia-cuda-cupti==13.0.85\n[pip3] nvidia-cuda-nvrtc==13.0.88\n[pip3] nvidia-cuda-runtime==13.0.96\n[pip3] nvidia-cudnn-cu13==9.24.0.43\n[pip3] nvidia-cufft==12.0.0.61\n[pip3] nvidia-curand==10.4.0.35\n[pip3] nvidia-cusolver==12.0.4.66\n[pip3] nvidia-cusparse==12.6.3.3\n[pip3] nvidia-cusparselt-cu13==0.8.1\n[pip3] nvidia-nccl-cu13==2.30.7\n[pip3] nvidia-nvjitlink==13.4.92\n[pip3] nvidia-nvtx==13.0.85\n[pip3] torch==2.14.1+cu130\n[pip3] torchaudio==2.11.1\n[pip3] torchvision==0.29.2\n[pip3] triton==3.9.0\n[conda] numpy                      2.5.4            pypi_0              pypi\n[conda] nvidia-cublas              13.1.1.3         pypi_0              pypi\n[conda] nvidia-cuda-cupti          13.0.85          pypi_0              pypi\n[conda] nvidia-cuda-nvrtc          13.0.88          pypi_0              pypi\n[conda] nvidia-cuda-runtime        13.0.96          pypi_0              pypi\n[conda] nvidia-cudnn-cu13          9.24.0.43        pypi_0              pypi\n[conda] nvidia-cufft               12.0.0.61        pypi_0              pypi\n[conda] nvidia-curand              10.4.0.35        pypi_0              pypi\n[conda] nvidia-cusolver            12.0.4.66        pypi_0              pypi\n[conda] nvidia-cusparse            12.6.3.3         pypi_0              pypi\n[conda] nvidia-cusparselt-cu13     0.8.1            pypi_0              pypi\n[conda] nvidia-nccl-cu13           2.30.7           pypi_0              pypi\n[conda] nvidia-nvjitlink           13.4.92          pypi_0              pypi\n[conda] nvidia-nvtx                13.0.85          pypi_0              pypi\n[conda] torch                      2.14.1+cu130     pypi_0              pypi\n[conda] torchaudio                 2.11.1           pypi_0              pypi\n[conda] torchvision                0.29.2           pypi_0              pypi\n[conda] triton                     3.9.0            pypi_0              pypi",
   "transformers_version": "5.22.2",
   "lm_eval_version": "0.4.13",
   "upper_git_hash": null,
@@ -987,5 +987,5 @@
   "fewshot_as_multiturn": null,
   "chat_template": null,
   "chat_template_sha": null,
-  "total_evaluation_time_seconds": "11254.389191769063"
+  "total_evaluation_time_seconds": "11208.402622907"
 }
