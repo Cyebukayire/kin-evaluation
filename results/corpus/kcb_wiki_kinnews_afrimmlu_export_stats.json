@@ -1,0 +1,21 @@
+{
+  "passages": 49732,
+  "queries": 583,
+  "query_splits": [
+    "test",
+    "validation"
+  ],
+  "passage_text": "title : text",
+  "query_text": "question + choices (same as BM25)",
+  "inputs_sha256": {
+    "passages.jsonl": "36a741b5f5a5211f",
+    "afrimmlu/test.jsonl": "97e2d63d3a8d80ac",
+    "afrimmlu/validation.jsonl": "522ea117f1ab8706"
+  },
+  "outputs_sha256": {
+    "corpus_passage_id.txt": "20a544dfcd776328",
+    "corpus_passage_text.txt": "7ed5ee1365c07ff9",
+    "afrimmlu_query_id.txt": "57d52902010182b9",
+    "afrimmlu_query_text.txt": "4eba8563036df190"
+  }
+}

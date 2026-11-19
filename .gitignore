@@ -19,4 +19,9 @@ MORPHODATA/
 .env
 data/kinnews/
 results/retrieval/
-results/retrieval/
+results/raw/rag/**/samples_*.jsonl.gz
+!results/raw/**/stripped_samples_*.jsonl.gz
+configs/paths.local.env
+configs/paths.local.env
+configs/paths.local.env
+configs/paths.local.env
