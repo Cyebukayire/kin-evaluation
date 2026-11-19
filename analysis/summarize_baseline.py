@@ -34,12 +34,12 @@ def main(out_dir: str) -> None:
     out = Path(out_dir)
     results = load_results(out)
     lang = "eng" if "_eng" in str(out) else "kin"
-    model = next((m for m in PUBLISHED if m in str(out)), None) if lang == "kin" else None
+    model = next((m for m in PUBLISHED if m in str(out)), None) if lang == "kin" and "/rag/" not in str(out) else None
 
     for task, metric in METRIC.items():
         scores = {}
         for name, vals in results.items():
-            m = re.fullmatch(rf"{task}(?:_direct)?_{lang}_prompt_(\d)", name)
+            m = re.fullmatch(rf"{task}(?:_direct|_rag)?_{lang}_prompt_(\d)", name)
             if m and metric in vals:
                 scores[int(m.group(1))] = 100 * vals[metric]
         if not scores:
