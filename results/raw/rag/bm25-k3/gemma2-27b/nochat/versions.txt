@@ -1,0 +1,6 @@
+accelerate==1.15.0
+lm_eval==0.4.13
+torch==2.14.1+cu130
+transformers==5.22.2
+retrieval_file=results/retrieval/bm25/afrimmlu_kin.jsonl sha256=0fe1b073c6e60963 k=3 skip=
+git_commit=2b2050f7c6b5d3ce367d324e1a9310ca8599aef8
