@@ -1,0 +1,7 @@
+model,lang,pred_A_pct,gold_A_pct,pred_B_pct,gold_B_pct,pred_C_pct,gold_C_pct,pred_D_pct,gold_D_pct,pred_shortest_choice_pct,gold_shortest_choice_pct
+gemma2-27b,eng,22.0,20.6,27.4,25.8,29.0,27.6,21.6,26.0,21.2,20.4
+gemma2-27b,kin,27.0,20.6,26.8,25.8,27.0,27.6,19.2,26.0,21.0,19.8
+gemma4-31b,eng,25.0,20.6,25.0,25.8,27.2,27.6,22.8,26.0,24.6,20.4
+gemma4-31b,kin,26.2,20.6,27.4,25.8,21.2,27.6,25.2,26.0,26.2,19.8
+qwen38-27b,eng,30.8,20.6,24.6,25.8,21.8,27.6,22.8,26.0,31.8,20.4
+qwen38-27b,kin,32.6,20.6,28.6,25.8,16.2,27.6,22.6,26.0,42.0,19.8

@@ -1,0 +1,7 @@
+model,lang,best_prompt,correct,wrong_number_close,wrong_with_working,empty_output,wrong_bare_number,degenerate_repetition,no_number_found
+gemma2-27b,eng,1,198,18,34,0,0,0,0
+gemma2-27b,kin,5,88,15,115,19,13,0,0
+gemma4-31b,eng,2,147,25,18,0,34,25,1
+gemma4-31b,kin,2,71,12,41,4,52,68,2
+qwen38-27b,eng,4,153,21,40,3,31,1,1
+qwen38-27b,kin,4,85,5,117,2,38,2,1

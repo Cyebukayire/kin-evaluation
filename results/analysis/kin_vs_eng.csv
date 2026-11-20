@@ -1,0 +1,7 @@
+model,task,n,both_correct,eng_only_lost_in_kin,kin_only,both_wrong,lost_pct_of_eng_correct
+gemma2-27b,afrimgsm,250,82,116,6,46,58.6
+gemma2-27b,afrimmlu,500,172,205,29,94,54.4
+gemma4-31b,afrimgsm,250,55,92,16,87,62.6
+gemma4-31b,afrimmlu,500,163,166,58,113,50.5
+qwen38-27b,afrimgsm,250,56,97,29,68,63.4
+qwen38-27b,afrimmlu,500,143,178,42,137,55.5

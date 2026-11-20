@@ -1,0 +1,4 @@
+model,n,eng_robust_correct,robust_lost_in_kin,robust_kin_only,lost_pct_of_eng_robust
+gemma2-27b,500,312,132,13,42.3
+gemma4-31b,500,166,37,2,22.3
+qwen38-27b,500,194,64,4,33.0

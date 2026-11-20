@@ -1,0 +1,13 @@
+model,lang,task,best_prompt,n,acc,ci95,mean_over_prompts
+gemma2-27b,eng,afrimgsm,1,250,79.2,5.0,67.0
+gemma2-27b,eng,afrimmlu,1,500,75.4,3.8,73.3
+gemma2-27b,kin,afrimgsm,5,250,35.2,5.9,26.3
+gemma2-27b,kin,afrimmlu,1,500,40.2,4.3,38.2
+gemma4-31b,eng,afrimgsm,2,250,58.8,6.1,49.8
+gemma4-31b,eng,afrimmlu,1,500,65.8,4.2,58.8
+gemma4-31b,kin,afrimgsm,2,250,28.4,5.6,24.2
+gemma4-31b,kin,afrimmlu,4,500,44.2,4.4,41.4
+qwen38-27b,eng,afrimgsm,4,250,61.2,6.0,52.3
+qwen38-27b,eng,afrimmlu,1,500,64.2,4.2,58.6
+qwen38-27b,kin,afrimgsm,4,250,34.0,5.9,25.9
+qwen38-27b,kin,afrimmlu,3,500,37.0,4.2,34.6
