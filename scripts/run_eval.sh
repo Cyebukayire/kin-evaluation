@@ -71,7 +71,7 @@ lm_eval \
   --model_args pretrained=$MODEL,dtype=bfloat16$EXTRA \
   --tasks "$TASKS" \
   --num_fewshot 0 \
-  --batch_size auto \
+  --batch_size ${BATCH_SIZE:-auto} \
   $CHAT_FLAG \
   $LIMIT_FLAG \
   --log_samples \
